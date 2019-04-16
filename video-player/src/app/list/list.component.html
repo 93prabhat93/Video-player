@@ -1,0 +1,6 @@
+<div class="video-list" *ngFor="let video of videos">
+  <a class="single-video" href="{{ video.trailer }}">
+      <img src="{{ video.poster }}">
+      <p>{{ video.name }}</p>
+  </a>
+</div>
