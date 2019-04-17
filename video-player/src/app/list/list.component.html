@@ -1,8 +1,21 @@
-<div class="video-list" *ngFor="let video of videos">
+<!-- <div class="video-list" *ngFor="let video of videos">
   <a class="single-video" href="{{ video.trailer }}">
       <img src="{{ video.poster }}">
       <p>{{ video.name }}</p>
       
   </a>
   
-</div>
+</div> -->
+<owl-carousel
+     [options]="{items: 4, dots: false, nav: true,loop: true, margin:10 }"
+    
+    [items]="videos"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item" *ngFor="let video of videos;let i = index">
+      <a class="single-videos" href="{{ video.trailer }}">
+        <img class="thumbnail" src="{{ video.poster }}">
+        <p>{{ video.name }}</p>
+        
+    </a>
+    </div>
+   </owl-carousel>
