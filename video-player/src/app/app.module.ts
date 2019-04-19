@@ -8,7 +8,7 @@ import { RequestInterceptor } from './request.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlayerComponent } from './player/player.component';
+import { PlayerComponent } from './list/player//player.component';
 import { ListComponent } from './list/list.component';
 import { OwlModule } from 'ngx-owl-carousel';
 

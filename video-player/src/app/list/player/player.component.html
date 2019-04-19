@@ -1,0 +1,9 @@
+<div class="player-box">
+  <object width="100%" height="400" >
+      <param name="movie" [value]="currentUrl"/>
+      <param name="allowFullScreen" value="true"/>
+      <param name="allowscriptaccess" value="always"/>
+      <embed [src]="currentUrl" class="youtube-player video-player" type="text/html" allowscriptaccess="always" allowfullscreen="true"/>
+  </object>
+  <p>Current url is {{currentUrl}}</p>
+</div>

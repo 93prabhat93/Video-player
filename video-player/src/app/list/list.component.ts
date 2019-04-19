@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiRequestService } from '../api-request.service';
+import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
+
+// import { PlayerComponent } from './player/player.component'
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -7,16 +10,21 @@ import { ApiRequestService } from '../api-request.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(public apiRequestService: ApiRequestService) {}
+constructor(public apiRequestService: ApiRequestService,private sanitizer:DomSanitizer) {}
+
 
 videos:any;
+urlToplay: SafeResourceUrl;
 
 
   ngOnInit() {
     this.getVideos();
-    alert("hi");
+    
   }
-
+  myCurrentUrl(url:any){
+    alert(url)
+    this.urlToplay = this.sanitizer.bypassSecurityTrustUrl(url); 
+   }
   getVideos() {
     this.apiRequestService.getVideosFromServer().subscribe(
        data => { 
