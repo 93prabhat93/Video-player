@@ -32,11 +32,10 @@ urlToplay: any;
         console.log(this.videos);
        },
        err => {
-         alert('Error in fetching Data!'); 
+         alert('Error!'); 
          
          // We can redirect it to error page.
        },
-       () => console.log('done loading videos')
    );
 }
 
