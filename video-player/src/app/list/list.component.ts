@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiRequestService } from '../api-request.service';
-import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 // import { PlayerComponent } from './player/player.component'
 @Component({
@@ -14,7 +14,7 @@ constructor(public apiRequestService: ApiRequestService,private sanitizer:DomSan
 
 
 videos:any;
-urlToplay: SafeResourceUrl;
+urlToplay: any;
 
 
   ngOnInit() {
@@ -23,7 +23,7 @@ urlToplay: SafeResourceUrl;
   }
   myCurrentUrl(url:any){
     alert(url)
-    this.urlToplay = this.sanitizer.bypassSecurityTrustUrl(url); 
+    this.urlToplay = this.sanitizer.bypassSecurityTrustResourceUrl(url); 
    }
   getVideos() {
     this.apiRequestService.getVideosFromServer().subscribe(
